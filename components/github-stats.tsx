@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent } from "@/components/ui/tabs"
 import { GitHubData } from "@/lib/types"
 import { Clock, Code, GitCommit, Star } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"

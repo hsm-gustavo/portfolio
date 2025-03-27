@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "motion/react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent } from "@/components/ui/tabs"
 import {
   SiCss3,
   SiDocker,
@@ -17,8 +17,12 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "@icons-pack/react-simple-icons"
+import { useState } from "react"
+import { Button } from "./ui/button"
 
 export default function Skills() {
+  const [activeTab, setActiveTab] = useState("languages")
+
   const skillCategories = [
     {
       id: "languages",
@@ -72,18 +76,26 @@ export default function Skills() {
           </p>
         </div>
         <div className="max-w-4xl mx-auto">
-          <Tabs defaultValue="languages" className="w-full">
-            <TabsList className="grid grid-cols-3 mb-8">
-              {skillCategories.map((category) => (
-                <TabsTrigger
-                  key={category.id}
-                  value={category.id}
-                  className="font-mono"
-                >
-                  {category.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+          <Tabs
+            defaultValue="languages"
+            className="w-full"
+            value={activeTab}
+            onValueChange={setActiveTab}
+          >
+            <div className="flex justify-center mb-8">
+              <div className="flex flex-wrap gap-2 justify-center bg-muted rounded-lg p-[3px]">
+                {skillCategories.map((category) => (
+                  <Button
+                    key={category.id}
+                    variant={activeTab === category.id ? "default" : "ghost"}
+                    className="font-mono"
+                    onClick={() => setActiveTab(category.id)}
+                  >
+                    {category.name}
+                  </Button>
+                ))}
+              </div>
+            </div>
 
             {skillCategories.map((category) => (
               <TabsContent key={category.id} value={category.id}>

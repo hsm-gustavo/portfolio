@@ -20,6 +20,7 @@ import portfolio from "@/public/portfolio.png"
 import rai from "@/public/rai.png"
 import rpd from "@/public/rpd.png"
 import Image from "next/image"
+import { useState } from "react"
 
 interface Project {
   title: string
@@ -118,6 +119,8 @@ const ProjectCard = ({ project, index, fadeIn }: ProjectCardProps) => (
 )
 
 export default function Projects() {
+  const [activeTab, setActiveTab] = useState("personal")
+
   const workProjects: Project[] = [
     {
       title: "Rápido Infoshop's Website",
@@ -230,15 +233,30 @@ export default function Projects() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <Tabs defaultValue="personal" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8 max-w-md mx-auto">
-              <TabsTrigger value="personal" className="font-mono">
-                Personal Projects
-              </TabsTrigger>
-              <TabsTrigger value="work" className="font-mono">
-                Work Projects
-              </TabsTrigger>
-            </TabsList>
+          <Tabs
+            defaultValue="personal"
+            className="w-full"
+            value={activeTab}
+            onValueChange={setActiveTab}
+          >
+            <div className="flex justify-center mb-8">
+              <div className="flex flex-wrap gap-2 justify-center max-w-md w-full bg-muted rounded-lg p-[3px]">
+                <Button
+                  variant={activeTab === "personal" ? "default" : "ghost"}
+                  className="font-mono flex-1"
+                  onClick={() => setActiveTab("personal")}
+                >
+                  Personal Projects
+                </Button>
+                <Button
+                  variant={activeTab === "work" ? "default" : "ghost"}
+                  className="font-mono flex-1"
+                  onClick={() => setActiveTab("work")}
+                >
+                  Work Projects
+                </Button>
+              </div>
+            </div>
 
             <TabsContent value="personal">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

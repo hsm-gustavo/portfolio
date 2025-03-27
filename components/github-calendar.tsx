@@ -2,6 +2,7 @@
 
 import { Skeleton } from "@/components/ui/skeleton"
 import { GitHubCalendarProps } from "@/lib/types"
+import { motion } from "motion/react"
 
 export default function GitHubCalendar({
   contributionData,
@@ -50,7 +51,16 @@ export default function GitHubCalendar({
               <span key={month}>{month}</span>
             ))}
           </div>
-          <div className="grid grid-cols-52 gap-1">
+          <motion.div
+            className="grid grid-cols-52 gap-1"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              staggerChildren: 0.01,
+              delayChildren: 0.2,
+            }}
+          >
             {weeks.map((week, weekIndex) => (
               <div key={weekIndex} className="grid grid-rows-7 gap-1">
                 {week.contributionDays.map((day, dayIndex) => {
@@ -81,7 +91,7 @@ export default function GitHubCalendar({
                 })}
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
         <div className="flex items-center justify-end mt-2 gap-2">
           <span className="text-xs text-muted-foreground">Less</span>

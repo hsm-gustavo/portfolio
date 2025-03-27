@@ -9,6 +9,8 @@ import Skills from "@/components/skills"
 import { BASE_URL } from "@/lib/constants"
 import { GitHubData } from "@/lib/types"
 
+export const dynamic = "force-dynamic"
+
 export default async function Home() {
   const response = await fetch(`${BASE_URL}/api/github`)
   const githubData: GitHubData = await response.json()

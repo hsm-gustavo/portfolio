@@ -26,7 +26,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { BASE_URL } from "@/lib/constants"
 import { toast } from "sonner"
-import { NextResponse } from "next/server"
 
 export default function Contact() {
   const form = useForm<ContactFormType>({

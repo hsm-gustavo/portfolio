@@ -1,10 +1,9 @@
 "use client"
 
-import { motion } from "motion/react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { GitHubData } from "@/lib/types"
-import { Code, GitCommit, Star, GitFork } from "lucide-react"
+import { Code, GitCommit, Star } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
 import GitHubCalendar from "@/components/github-calendar"
 

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent } from "@/components/ui/tabs"
 import { ExternalLink } from "lucide-react"
 import { SiGithub as Github } from "@icons-pack/react-simple-icons"
 import dots from "@/public/dots.png"

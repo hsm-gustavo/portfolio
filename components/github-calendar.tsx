@@ -68,15 +68,14 @@ export default function GitHubCalendar({
                   if (level === 4 && day.contributionCount > 0)
                     bgColor = "bg-emerald-500 dark:bg-emerald-600/80"
 
+                  const date = new Date(`${day.date}T00:00:00`)
                   return (
                     <div
                       key={dayIndex}
                       className={`size-3 rounded-sm ${bgColor}`}
                       title={`${
                         day.contributionCount
-                      } contributions on ${new Date(
-                        day.date
-                      ).toLocaleDateString()}`}
+                      } contributions on ${date.toLocaleDateString()}`}
                     />
                   )
                 })}

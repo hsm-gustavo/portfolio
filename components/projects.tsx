@@ -192,6 +192,7 @@ export default function Projects() {
         "shadcn/ui",
         "React Hook Forms",
         "zustand",
+        "Docker"
       ],
       github: "https://github.com/hsm-gustavo/mona-ai-front",
       demo: null,

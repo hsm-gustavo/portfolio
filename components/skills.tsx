@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   SiCss3,
+  SiDocker,
   SiGit,
   SiGnubash,
   SiHtml5,
@@ -47,6 +48,7 @@ export default function Skills() {
         { name: "Linux", icon: <SiLinux className="w-12 h-12" /> },
         { name: "PostgreSQL", icon: <SiPostgresql className="w-12 h-12" /> },
         { name: "Git", icon: <SiGit className="w-12 h-12" /> },
+        { name: "Docker", icon: <SiDocker className="w-12 h-12" /> },
       ],
     },
   ]

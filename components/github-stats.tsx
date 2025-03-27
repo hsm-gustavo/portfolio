@@ -3,17 +3,25 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { GitHubData } from "@/lib/types"
-import { Code, GitCommit, Star } from "lucide-react"
+import { Clock, Code, GitCommit, Star } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
 import GitHubCalendar from "@/components/github-calendar"
+import { motion } from "motion/react"
+import { Button } from "./ui/button"
+import { useState } from "react"
 
 export default function GitHubStats({
   githubData,
 }: {
   githubData: GitHubData
 }) {
+  const [activeTab, setActiveTab] = useState("overview")
+
   const totalCommits =
     githubData.contributionsCollection.contributionCalendar.totalContributions
+
+  const createdAt = new Date(githubData.createdAt)
+  const currentYear = (new Date()).getFullYear()
 
   const statCards = [
     {
@@ -31,7 +39,30 @@ export default function GitHubStats({
       value: totalCommits,
       icon: <GitCommit className="size-4 text-primary" />,
     },
+    {
+      title: "Time Coding",
+      value: `${currentYear - createdAt.getFullYear()} years`,
+      icon: <Clock className="size-4 text-primary" />,
+    },
   ]
+
+  const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.1 * index, duration: 0.5 },
+    }),
+  }
+
+  const staggerContainer = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
 
   return (
     <section
@@ -47,36 +78,61 @@ export default function GitHubStats({
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="overview" className="font-mono">
-                Overview
-              </TabsTrigger>
-              <TabsTrigger value="contributions" className="font-mono">
-                Contributions
-              </TabsTrigger>
-            </TabsList>
+          <Tabs
+            defaultValue="overview"
+            className="w-full"
+            value={activeTab}
+            onValueChange={setActiveTab}
+          >
+            <div className="flex justify-center mb-8">
+              <div className="flex flex-wrap gap-2 justify-center max-w-md w-full bg-muted rounded-lg p-[3px]">
+                <Button
+                  variant={activeTab === "overview" ? "default" : "ghost"}
+                  className="font-mono flex-1"
+                  onClick={() => setActiveTab("overview")}
+                >
+                  Overview
+                </Button>
+                <Button
+                  variant={
+                    activeTab === "contributions" ? "default" : "ghost"
+                  }
+                  className="font-mono flex-1"
+                  onClick={() => setActiveTab("contributions")}
+                >
+                  Contributions
+                </Button>
+              </div>
+            </div>
 
             <TabsContent value="overview">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                {statCards.map((stat) => (
-                  <Card key={stat.title} className="border-none shadow-sm">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-2 text-muted-foreground">
-                        {stat.icon}
-                        <span className="text-sm">{stat.title}</span>
-                      </div>
-                      {!githubData ? (
-                        <Skeleton className="h-8 w-16" />
-                      ) : (
-                        <p className="text-2xl font-bold font-mono">
-                          {stat.value}
-                        </p>
-                      )}
-                    </CardContent>
-                  </Card>
+              <motion.div
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
+              >
+                {statCards.map((stat, index) => (
+                  <motion.div key={stat.title} variants={fadeIn} custom={index}>
+                    <Card className="border-none shadow-sm">
+                      <CardContent className="p-6">
+                        <div className="flex items-center justify-center gap-2 mb-2 text-muted-foreground">
+                          {stat.icon}
+                          <span className="text-sm">{stat.title}</span>
+                        </div>
+                        {!githubData ? (
+                          <Skeleton className="h-8 w-16" />
+                        ) : (
+                          <p className="text-2xl font-bold font-mono text-center">
+                            {stat.value}
+                          </p>
+                        )}
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </TabsContent>
 
             <TabsContent value="contributions">

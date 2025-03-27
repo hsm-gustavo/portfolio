@@ -22,6 +22,7 @@ const GITHUB_GRAPHQL_QUERY = `
             }
           }
         }
+        createdAt
       }
     }
   `

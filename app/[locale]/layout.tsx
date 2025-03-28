@@ -60,7 +60,7 @@ export async function generateMetadata(
     openGraph: {
       type: "website",
       locale: locale,
-      alternateLocale: locale === "en" ? "pt-BR" : "en",
+      alternateLocale: locale === "en" ? "br" : "en",
       url: homePath,
       title: t("title"),
       description: t("description"),

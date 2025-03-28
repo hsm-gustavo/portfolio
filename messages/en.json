@@ -3,7 +3,8 @@
     "title": "Gustavo Malaquias | Developer",
     "description": "Personal portfolio of Gustavo Malaquias, an aspiring fullstack developer and Computer Science student at UFAL.",
     "keywords": "developer,web development,portfolio,fullstack,next.js,react,typescript",
-    "ogImageAlt": "Gustavo Malaquias Portfolio"
+    "ogImageAlt": "Gustavo Malaquias Portfolio",
+    "subtitle": "Aspiring Fullstack Developer"
   },
   "navigation": {
     "about": "About",

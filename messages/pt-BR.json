@@ -1,0 +1,139 @@
+{
+  "navigation": {
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "github": "GitHub",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá",
+    "intro": "Eu sou",
+    "role": "um desenvolvedor fullstack aspirante",
+    "description": "Estudante de Ciência da Computação na UFAL, apaixonado por desenvolvimento web e personalização Linux",
+    "getInTouch": "Entre em contato",
+    "learnMore": "Saiba mais"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Sou apaixonado por criar aplicações eficientes e amigáveis, e por expandir continuamente meu conhecimento em desenvolvimento de software.",
+    "features": {
+      "student": {
+        "title": "Estudante de Ciência da Computação",
+        "description": "Atualmente estudando Ciência da Computação na UFAL, com foco em desenvolvimento web e engenharia de software."
+      },
+      "linux": {
+        "title": "Entusiasta de Linux",
+        "description": "Gosto de personalizar e otimizar meu ambiente Linux, sempre em busca de novas ferramentas e ajustes."
+      },
+      "developer": {
+        "title": "Desenvolvedor Fullstack Aspirante",
+        "description": "Atualmente me aprofundando em desenvolvimento backend com Spring com SpringBoot enquanto construo minhas habilidades frontend."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Ferramentas",
+    "description": "Tecnologias e ferramentas que uso para dar vida às ideias",
+    "categories": {
+      "languages": "Linguagens",
+      "frameworks": "Frameworks",
+      "tools": "Ferramentas"
+    }
+  },
+  "github": {
+    "title": "Atividade no GitHub",
+    "description": "Um panorama da minha jornada de codificação e contribuições open-source",
+    "error": "Não foi possível carregar os dados do GitHub:",
+    "tabs": {
+      "overview": "Visão Geral",
+      "contributions": "Contribuições"
+    },
+    "stats": {
+      "repositories": "Repositórios",
+      "stars": "Estrelas",
+      "contributions": "Contribuições",
+      "timeCoding": "Tempo Codificando",
+      "years": "anos"
+    },
+    "contributionCalendarTitle": "Calendário de Contribuições de {year}",
+    "noContributionData": "Sem dados de contribuição",
+    "contributionsOn": "contribuições em",
+    "contributionScale": {
+      "less": "Menos",
+      "more": "Mais"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Uma seleção dos meus projetos pessoais e profissionais",
+    "tabs": {
+      "personal": "Projetos Pessoais",
+      "work": "Projetos Profissionais"
+    },
+    "buttons": {
+      "code": "Código",
+      "demo": "Demo"
+    },
+    "workProjects": {
+      "rapidoWebsite": {
+        "title": "Site da Rápido Infoshop",
+        "description": "Um site que apresenta os produtos mais vendidos da Rápido Infoshop, fornecendo informações sobre a missão, serviços e expertise da empresa no setor de redes."
+      },
+      "raiChatbot": {
+        "title": "Rai - Chatbot WhatsApp",
+        "description": "Um chatbot de WhatsApp com IA utilizando o GPT-4o mini da OpenAI e Geração Aumentada por Recuperação (RAG) para fornecer respostas precisas e específicas da empresa aos usuários."
+      },
+      "comingSoon": {
+        "title": "Em breve...",
+        "description": "Uma plataforma de cursos focada em negócios que melhora o engajamento do usuário através de gamificação, apresentando um sistema de classificação competitivo que é atualizado diariamente para incentivar a participação."
+      }
+    },
+    "personalProjects": {
+      "portfolio": {
+        "title": "Portfólio Pessoal",
+        "description": "Meu site de portfólio pessoal construído com Next.js e Tailwind CSS."
+      },
+      "monaAI": {
+        "title": "Mona AI",
+        "description": "Uma aplicação front-end desenvolvida para converter PDFs em Markdown e responder perguntas com base no conteúdo do documento."
+      },
+      "dots": {
+        "title": "dots",
+        "description": "Um repositório relacionado à minha configuração atual do Hyprland."
+      }
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Tem uma pergunta ou quer trabalhar junto? Sinta-se à vontade para entrar em contato!",
+    "info": {
+      "title": "Informações de Contato",
+      "description": "Escolha seu método de comunicação preferido",
+      "email": "Email",
+      "github": "GitHub"
+    },
+    "form": {
+      "title": "Envie uma Mensagem",
+      "description": "Preencha o formulário abaixo e eu retornarei o mais breve possível",
+      "name": "Seu Nome",
+      "email": "Seu Email",
+      "message": "Sua Mensagem",
+      "sending": "Enviando...",
+      "send": "Enviar Mensagem",
+      "successTitle": "Sucesso!",
+      "success": "Mensagem enviada com sucesso!",
+      "errorTitle": "Erro!",
+      "error": "Houve um erro desconhecido ao tentar enviar o email."
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "builtWith": "Construído com Next.js, Tailwind CSS e shadcn/ui"
+  },
+  "languageSwitcher": {
+    "label": "Mudar idioma",
+    "en": "Inglês",
+    "pt-BR": "Português (Brasil)"
+  }
+}

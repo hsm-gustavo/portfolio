@@ -3,8 +3,11 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap, Laptop, Rocket } from "lucide-react"
 import { motion } from "motion/react"
+import { useTranslations } from "next-intl"
 
 export default function About() {
+  const t = useTranslations("about")
+
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
     animate: (index: number) => ({
@@ -17,21 +20,18 @@ export default function About() {
   const features = [
     {
       icon: <GraduationCap className="h-10 w-10 text-primary" />,
-      title: "Computer Science Student",
-      description:
-        "Currently studying Computer Science at UFAL, focusing on web development and software engineering.",
+      title: t("features.student.title"),
+      description: t("features.student.description"),
     },
     {
       icon: <Laptop className="h-10 w-10 text-primary" />,
-      title: "Linux Enthusiast",
-      description:
-        "I enjoy customizing and optimizing my Linux setup, always on the lookout for new tools and tweaks.",
+      title: t("features.linux.title"),
+      description: t("features.linux.description"),
     },
     {
       icon: <Rocket className="h-10 w-10 text-primary" />,
-      title: "Aspiring Fullstack Developer",
-      description:
-        "Currently diving deeper into backend development with Spring with SpringBoot while building my frontend skills.",
+      title: t("features.developer.title"),
+      description: t("features.developer.description"),
     },
   ]
 
@@ -42,11 +42,9 @@ export default function About() {
     >
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 font-mono">About Me</h2>
+          <h2 className="text-3xl font-bold mb-4 font-mono">{t("title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I&apos;m passionate about creating efficient, user-friendly
-            applications and continuously expanding my knowledge in software
-            development.
+            {t("description")}
           </p>
         </div>
 

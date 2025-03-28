@@ -19,14 +19,16 @@ import {
 } from "@icons-pack/react-simple-icons"
 import { useState } from "react"
 import { Button } from "./ui/button"
+import { useTranslations } from "next-intl"
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState("languages")
+  const t = useTranslations("skills")
 
   const skillCategories = [
     {
       id: "languages",
-      name: "Languages",
+      name: t("categories.languages"),
       skills: [
         { name: "Python", icon: <SiPython className="w-12 h-12" /> },
         { name: "JavaScript", icon: <SiJavascript className="w-12 h-12" /> },
@@ -38,7 +40,7 @@ export default function Skills() {
     },
     {
       id: "frameworks",
-      name: "Frameworks",
+      name: t("categories.frameworks"),
       skills: [
         { name: "React", icon: <SiReact className="w-12 h-12" /> },
         { name: "Next.js", icon: <SiNextdotjs className="w-12 h-12" /> },
@@ -47,7 +49,7 @@ export default function Skills() {
     },
     {
       id: "tools",
-      name: "Tools & Platforms",
+      name: t("categories.tools"),
       skills: [
         { name: "Linux", icon: <SiLinux className="w-12 h-12" /> },
         { name: "PostgreSQL", icon: <SiPostgresql className="w-12 h-12" /> },
@@ -70,9 +72,9 @@ export default function Skills() {
     <section id="skills" className="py-20 flex items-center justify-center">
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 font-mono">Skills & Tools</h2>
+          <h2 className="text-3xl font-bold mb-4 font-mono">{t("title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I work with to bring ideas to life
+            {t("description")}
           </p>
         </div>
         <div className="max-w-4xl mx-auto">

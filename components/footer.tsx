@@ -1,7 +1,9 @@
 import logo from "@/public/logo.svg"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 export function Footer() {
+  const t = useTranslations("footer")
   const currentYear = new Date().getFullYear()
 
   return (
@@ -17,11 +19,11 @@ export function Footer() {
               className="mr-2"
             />
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Gustavo Malaquias. All rights reserved.
+              © {currentYear} Gustavo Malaquias. {t("rights")}
             </p>
           </div>
           <div className="text-sm text-muted-foreground">
-            <p>Built with Next.js, Tailwind CSS, and shadcn/ui</p>
+            <p>{t("builtWith")}</p>
           </div>
         </div>
       </div>

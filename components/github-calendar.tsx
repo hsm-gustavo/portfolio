@@ -3,16 +3,19 @@
 import { Skeleton } from "@/components/ui/skeleton"
 import { GitHubCalendarProps } from "@/lib/types"
 import { motion } from "motion/react"
+import { useTranslations } from "next-intl"
 
 export default function GitHubCalendar({
   contributionData,
 }: GitHubCalendarProps) {
+  const t = useTranslations("github")
+
   if (!contributionData) {
     return <Skeleton className="h-32 w-full" />
   }
 
   if (!contributionData || contributionData.weeks.length === 0) {
-    return <p>No contribution data</p>
+    return <p>{t("noContributionData")}</p>
   }
 
   const weeks = contributionData.weeks.filter((week) =>
@@ -85,7 +88,7 @@ export default function GitHubCalendar({
                       className={`size-3 rounded-sm ${bgColor}`}
                       title={`${
                         day.contributionCount
-                      } contributions on ${date.toLocaleDateString()}`}
+                      } ${t("contributionsOn")} ${date.toLocaleDateString()}`}
                     />
                   )
                 })}
@@ -94,13 +97,17 @@ export default function GitHubCalendar({
           </motion.div>
         </div>
         <div className="flex items-center justify-end mt-2 gap-2">
-          <span className="text-xs text-muted-foreground">Less</span>
+          <span className="text-xs text-muted-foreground">
+            {t("contributionScale.less")}
+          </span>
           <div className="size-3 rounded-sm bg-muted"></div>
           <div className="size-3 rounded-sm bg-emerald-200 dark:bg-emerald-900/30"></div>
           <div className="size-3 rounded-sm bg-emerald-300 dark:bg-emerald-800/40"></div>
           <div className="size-3 rounded-sm bg-emerald-400 dark:bg-emerald-700/60"></div>
           <div className="size-3 rounded-sm bg-emerald-500 dark:bg-emerald-600/80"></div>
-          <span className="text-xs text-muted-foreground">More</span>
+          <span className="text-xs text-muted-foreground">
+            {t("contributionScale.more")}
+          </span>
         </div>
       </div>
     </div>

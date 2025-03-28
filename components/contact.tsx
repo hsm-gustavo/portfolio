@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import {
   Form,
@@ -26,8 +26,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { BASE_URL } from "@/lib/constants"
 import { toast } from "sonner"
+import { useTranslations } from "next-intl"
 
 export default function Contact() {
+  const t = useTranslations("contact")
+
   const form = useForm<ContactFormType>({
     resolver: zodResolver(ContactForm),
     defaultValues: {
@@ -39,23 +42,22 @@ export default function Contact() {
 
   const handleSubmit = async (values: ContactFormType) => {
     try {
-      const response = await fetch(`${BASE_URL}/api/email`, {
+      await fetch(`${BASE_URL}/api/email`, {
         method: "POST",
         body: JSON.stringify(values),
       })
-      const data: { message: string } = await response.json()
-      toast.success("Sucess!", {
-        description: data.message,
+      
+      toast.success(t("form.successTitle"), {
+        description: t("form.success"),
       })
     } catch (error) {
       if (error instanceof Error) {
-        toast.error("Error!", {
+        toast.error(t("form.errorTitle"), {
           description: error.message,
         })
       }
-      toast.error("Error!", {
-        description:
-          "There was an unknown error while trying to send the email.",
+      toast.error(t("form.errorTitle"), {
+        description: t("form.error"),
       })
     }
   }
@@ -82,9 +84,9 @@ export default function Contact() {
     >
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 font-mono">Get In Touch</h2>
+          <h2 className="text-3xl font-bold mb-4 font-mono">{t("title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a question or want to work together? Feel free to reach out!
+            {t("description")}
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -96,10 +98,8 @@ export default function Contact() {
           >
             <Card className="h-full border-none shadow-sm">
               <CardHeader>
-                <CardTitle className="font-mono">Contact Information</CardTitle>
-                <CardDescription>
-                  Choose your preferred method of communication
-                </CardDescription>
+                <CardTitle className="font-mono">{t("info.title")}</CardTitle>
+                <CardDescription>{t("info.description")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
@@ -133,11 +133,8 @@ export default function Contact() {
           >
             <Card className="h-full border-none shadow-sm">
               <CardHeader>
-                <CardTitle className="font-mono">Send a Message</CardTitle>
-                <CardDescription>
-                  Fill out the form below and I&apos;ll get back to you as soon as
-                  possible
-                </CardDescription>
+                <CardTitle className="font-mono">{t("form.title")}</CardTitle>
+                <CardDescription>{t("form.description")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <Form {...form}>
@@ -152,7 +149,7 @@ export default function Contact() {
                         <FormItem className="space-y-2">
                           <FormControl>
                             <Input
-                              placeholder="Your Name"
+                              placeholder={t("form.name")}
                               {...field}
                               required
                             />
@@ -168,7 +165,7 @@ export default function Contact() {
                         <FormItem className="space-y-2">
                           <FormControl>
                             <Input
-                              placeholder="Your Email"
+                              placeholder={t("form.email")}
                               type="email"
                               {...field}
                               required
@@ -185,7 +182,7 @@ export default function Contact() {
                         <FormItem className="space-y-2">
                           <FormControl>
                             <Textarea
-                              placeholder="Your Message"
+                              placeholder={t("form.message")}
                               {...field}
                               rows={4}
                               required
@@ -203,12 +200,12 @@ export default function Contact() {
                       {form.formState.isSubmitting ? (
                         <p className="flex items-center gap-2">
                           <Loader2 className="h-4 w-4 animate-spin" />
-                          Sending...
+                          {t("form.sending")}
                         </p>
                       ) : (
                         <p className="flex items-center gap-2">
                           <Send className="h-4 w-4" />
-                          Send Message
+                          {t("form.send")}
                         </p>
                       )}
                     </Button>

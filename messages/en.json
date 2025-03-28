@@ -1,0 +1,159 @@
+{
+  "layout": {
+    "title": "Gustavo Malaquias | Developer",
+    "description": "Personal portfolio of Gustavo Malaquias, an aspiring fullstack developer and Computer Science student at UFAL.",
+    "keywords": "developer,web development,portfolio,fullstack,next.js,react,typescript",
+    "ogImageAlt": "Gustavo Malaquias Portfolio"
+  },
+  "navigation": {
+    "about": "About",
+    "skills": "Skills",
+    "github": "GitHub",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hey there",
+    "intro": "I'm",
+    "role": "an aspiring fullstack developer",
+    "description": "Computer Science student at UFAL, passionate about web development and Linux customization",
+    "getInTouch": "Get in touch",
+    "learnMore": "Learn more"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm passionate about creating efficient, user-friendly applications and continuously expanding my knowledge in software development.",
+    "features": {
+      "student": {
+        "title": "Computer Science Student",
+        "description": "Currently studying Computer Science at UFAL, focusing on web development and software engineering."
+      },
+      "linux": {
+        "title": "Linux Enthusiast",
+        "description": "I enjoy customizing and optimizing my Linux setup, always on the lookout for new tools and tweaks."
+      },
+      "developer": {
+        "title": "Aspiring Fullstack Developer",
+        "description": "Currently diving deeper into backend development with Spring with SpringBoot while building my frontend skills."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills & Tools",
+    "description": "Technologies and tools I work with to bring ideas to life",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "tools": "Tools"
+    }
+  },
+  "github": {
+    "title": "GitHub Activity",
+    "description": "A snapshot of my coding journey and open-source contributions",
+    "error": "Unable to load GitHub data:",
+    "tabs": {
+      "overview": "Overview",
+      "contributions": "Contributions"
+    },
+    "stats": {
+      "repositories": "Repositories",
+      "stars": "Stars",
+      "contributions": "Contributions",
+      "timeCoding": "Time Coding",
+      "years": "years"
+    },
+    "contributionCalendarTitle": "Contribution Calendar of {year}",
+    "noContributionData": "No contribution data",
+    "contributionsOn": "contributions on",
+    "contributionScale": {
+      "less": "Less",
+      "more": "More"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "A selection of my work and personal projects",
+    "tabs": {
+      "personal": "Personal Projects",
+      "work": "Work Projects"
+    },
+    "buttons": {
+      "code": "Code",
+      "demo": "Demo"
+    },
+    "workProjects": {
+      "rapidoWebsite": {
+        "title": "Rápido Infoshop's Website",
+        "description": "A website showcasing Rápido Infoshop's best-selling products while providing insights into the company's mission, services, and expertise in the networking industry."
+      },
+      "raiChatbot": {
+        "title": "Rai - WhatsApp Chabot",
+        "description": "An AI-powered WhatsApp chatbot utilizing OpenAI's GPT-4o mini and Retrieval-Augmented Generation (RAG) to provide accurate, company-specific answers to users."
+      },
+      "comingSoon": {
+        "title": "Soon...",
+        "description": "A business-focused course platform that enhances user engagement through gamification, featuring a competitive ranking system that updates daily to encourage participation."
+      }
+    },
+    "personalProjects": {
+      "portfolio": {
+        "title": "Personal Portfolio",
+        "description": "My personal portfolio website built with Next.js and Tailwind CSS."
+      },
+      "monaAI": {
+        "title": "Mona AI",
+        "description": "A front-end application developed for converting PDFs to Markdown and answering questions based on the document content."
+      },
+      "dots": {
+        "title": "dots",
+        "description": "A repository related to my current Hyprland configuration."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Have a question or want to work together? Feel free to reach out!",
+    "info": {
+      "title": "Contact Information",
+      "description": "Choose your preferred method of communication",
+      "email": "Email",
+      "github": "GitHub"
+    },
+    "form": {
+      "title": "Send a Message",
+      "description": "Fill out the form below and I'll get back to you as soon as possible",
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "sending": "Sending...",
+      "send": "Send Message",
+      "successTitle": "Success!",
+      "success": "Message sent successfully!",
+      "errorTitle": "Error!",
+      "error": "There was an unknown error while trying to send the email."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js, Tailwind CSS, and shadcn/ui"
+  },
+  "languageSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, en {English} pt_BR {Portuguese (Brazil)} other {Unknown}}"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "manifest": {
+    "name": "Gustavo Malaquias | Developer",
+    "description": "Personal portfolio of Gustavo Malaquias, an aspiring fullstack developer"
+  }
+}

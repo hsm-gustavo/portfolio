@@ -9,39 +9,41 @@ import GitHubCalendar from "@/components/github-calendar"
 import { motion } from "motion/react"
 import { Button } from "./ui/button"
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 export default function GitHubStats({
   githubData,
 }: {
   githubData: GitHubData
 }) {
+  const t = useTranslations("github")
   const [activeTab, setActiveTab] = useState("overview")
 
   const totalCommits =
     githubData.contributionsCollection.contributionCalendar.totalContributions
 
   const createdAt = new Date(githubData.createdAt)
-  const currentYear = (new Date()).getFullYear()
+  const currentYear = new Date().getFullYear()
 
   const statCards = [
     {
-      title: "Repositories",
+      title: t("stats.repositories"),
       value: githubData.repositories.totalCount,
       icon: <Code className="size-4 text-primary" />,
     },
     {
-      title: "Stars",
+      title: t("stats.stars"),
       value: githubData.starredRepositories.totalCount,
       icon: <Star className="size-4 text-primary" />,
     },
     {
-      title: "Contributions",
+      title: t("stats.contributions"),
       value: totalCommits,
       icon: <GitCommit className="size-4 text-primary" />,
     },
     {
-      title: "Time Coding",
-      value: `${currentYear - createdAt.getFullYear()} years`,
+      title: t("stats.timeCoding"),
+      value: `${currentYear - createdAt.getFullYear()} ${t("stats.years")}`,
       icon: <Clock className="size-4 text-primary" />,
     },
   ]
@@ -71,9 +73,9 @@ export default function GitHubStats({
     >
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 font-mono">GitHub Activity</h2>
+          <h2 className="text-3xl font-bold mb-4 font-mono">{t("title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A snapshot of my coding journey and open-source contributions
+            {t("description")}
           </p>
         </div>
 
@@ -91,16 +93,14 @@ export default function GitHubStats({
                   className="font-mono flex-1"
                   onClick={() => setActiveTab("overview")}
                 >
-                  Overview
+                  {t("tabs.overview")}
                 </Button>
                 <Button
-                  variant={
-                    activeTab === "contributions" ? "default" : "ghost"
-                  }
+                  variant={activeTab === "contributions" ? "default" : "ghost"}
                   className="font-mono flex-1"
                   onClick={() => setActiveTab("contributions")}
                 >
-                  Contributions
+                  {t("tabs.contributions")}
                 </Button>
               </div>
             </div>
@@ -139,7 +139,9 @@ export default function GitHubStats({
               <Card className="border-none shadow-sm">
                 <CardHeader>
                   <CardTitle className="text-lg font-mono">
-                    Contribution Calendar of {new Date().getFullYear()}
+                    {t("contributionCalendarTitle", {
+                      year: new Date().getFullYear(),
+                    })}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>

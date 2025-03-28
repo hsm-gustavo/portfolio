@@ -3,10 +3,13 @@
 import { Button } from "@/components/ui/button"
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { ArrowDown, Mail } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { motion } from "motion/react"
+import { useTranslations } from "next-intl"
 
 export default function Hero() {
+  const t = useTranslations("hero")
+
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact")
     if (contactSection) {
@@ -25,26 +28,27 @@ export default function Hero() {
           className="max-w-3xl mx-auto text-center"
         >
           <h1 className="font-mono text-4xl md:text-6xl">
-            Hey there{" "}
+            {t("greeting")}{" "}
             <span className="inline-block animate-wave origin-[70%_70%]">
               👋
             </span>
           </h1>
           <h2 className="font-medium text-2xl md:text-3xl mb-6">
-            I&apos;m{" "}
+            {t("intro")}{" "}
             <span className="text-primary font-mono">Gustavo Malaquias</span>,
             <br />
-            an aspiring fullstack developer
+            {t("role")}
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Computer Science student at UFAL, passionate about web development
-            and Linux customization
+            {t("description")}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-            <Button size={"lg"} onClick={scrollToContact}>Get in touch</Button>
+            <Button size={"lg"} onClick={scrollToContact}>
+              {t("getInTouch")}
+            </Button>
             <Button variant={"outline"} size={"lg"} asChild>
               <Link href={"#about"}>
-                Learn more <ArrowDown className="ml-2 h-4 w-4" />
+                {t("learnMore")} <ArrowDown className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>

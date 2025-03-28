@@ -1,7 +1,9 @@
 {
   "layout": {
     "title": "Gustavo Malaquias | Developer",
-    "description": "Personal portfolio of Gustavo Malaquias, an aspiring fullstack developer"
+    "description": "Personal portfolio of Gustavo Malaquias, an aspiring fullstack developer and Computer Science student at UFAL.",
+    "keywords": "developer,web development,portfolio,fullstack,next.js,react,typescript",
+    "ogImageAlt": "Gustavo Malaquias Portfolio"
   },
   "navigation": {
     "about": "About",
@@ -149,5 +151,9 @@
     "title": "Page Not Found",
     "description": "Sorry, the page you are looking for doesn't exist or has been moved.",
     "backHome": "Back to Home"
+  },
+  "manifest": {
+    "name": "Gustavo Malaquias | Developer",
+    "description": "Personal portfolio of Gustavo Malaquias, an aspiring fullstack developer"
   }
 }

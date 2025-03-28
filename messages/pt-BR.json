@@ -1,7 +1,9 @@
 {
   "layout": {
     "title": "Gustavo Malaquias | Desenvolvedor",
-    "description": "Portfólio pessoal de Gustavo Malaquias, um desenvolvedor fullstack aspirante"
+    "description": "Portfólio pessoal de Gustavo Malaquias, um desenvolvedor fullstack aspirante e estudante de Ciência da Computação na UFAL.",
+    "keywords": "desenvolvedor,desenvolvimento web,portfólio,fullstack,next.js,react,typescript",
+    "ogImageAlt": "Portfólio de Gustavo Malaquias"
   },
   "navigation": {
     "about": "Sobre",
@@ -149,5 +151,9 @@
     "title": "Página Não Encontrada",
     "description": "Desculpe, a página que você está procurando não existe ou foi movida.",
     "backHome": "Voltar para a Página Inicial"
+  },
+  "manifest": {
+    "name": "Gustavo Malaquias | Desenvolvedor",
+    "description":"Portfólio pessoal de Gustavo Malaquias, um desenvolvedor fullstack aspirante"
   }
 }

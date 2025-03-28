@@ -1,4 +1,8 @@
 {
+  "layout": {
+    "title": "Gustavo Malaquias | Developer",
+    "description": "Personal portfolio of Gustavo Malaquias, an aspiring fullstack developer"
+  },
   "navigation": {
     "about": "About",
     "skills": "Skills",
@@ -133,13 +137,17 @@
   },
   "languageSwitcher": {
     "label": "Change language",
-    "en": "English",
-    "pt-BR": "Portuguese (Brazil)"
+    "locale": "{locale, select, en {English} pt_BR {Portuguese (Brazil)} other {Unknown}}"
   },
   "theme": {
     "toggle": "Toggle theme",
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
   }
 }

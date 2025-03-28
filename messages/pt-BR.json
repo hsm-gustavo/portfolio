@@ -1,4 +1,8 @@
 {
+  "layout": {
+    "title": "Gustavo Malaquias | Desenvolvedor",
+    "description": "Portfólio pessoal de Gustavo Malaquias, um desenvolvedor fullstack aspirante"
+  },
   "navigation": {
     "about": "Sobre",
     "skills": "Habilidades",
@@ -133,13 +137,17 @@
   },
   "languageSwitcher": {
     "label": "Mudar idioma",
-    "en": "Inglês",
-    "pt-BR": "Português (Brasil)"
+    "locale": "{locale, select, en {Inglês} pt_BR {Português (Brasil)} other {Desconhecido}}"
   },
   "theme": {
     "toggle": "Mudar tema",
     "light": "Claro",
     "dark": "Escuro",
     "system": "Sistema"
+  },
+  "notFound": {
+    "title": "Página Não Encontrada",
+    "description": "Desculpe, a página que você está procurando não existe ou foi movida.",
+    "backHome": "Voltar para a Página Inicial"
   }
 }

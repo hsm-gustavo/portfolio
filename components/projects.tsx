@@ -21,6 +21,7 @@ import rai from "@/public/rai.png"
 import rpd from "@/public/rpd.png"
 import Image from "next/image"
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 interface Project {
   title: string
@@ -49,9 +50,17 @@ interface ProjectCardProps {
       }
     }
   }
+  codeTranslation: string
+  demoTranslation: string
 }
 
-const ProjectCard = ({ project, index, fadeIn }: ProjectCardProps) => (
+const ProjectCard = ({
+  project,
+  index,
+  fadeIn,
+  codeTranslation,
+  demoTranslation,
+}: ProjectCardProps) => (
   <motion.div
     key={project.title}
     custom={index}
@@ -101,7 +110,7 @@ const ProjectCard = ({ project, index, fadeIn }: ProjectCardProps) => (
           <Button variant="outline" size="sm" asChild>
             <a href={project.github} target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4 mr-2" />
-              Code
+              {codeTranslation}
             </a>
           </Button>
         )}
@@ -109,7 +118,7 @@ const ProjectCard = ({ project, index, fadeIn }: ProjectCardProps) => (
           <Button size="sm" asChild>
             <a href={project.demo} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-4 w-4 mr-2" />
-              Demo
+              {demoTranslation}
             </a>
           </Button>
         )}
@@ -120,12 +129,12 @@ const ProjectCard = ({ project, index, fadeIn }: ProjectCardProps) => (
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("personal")
+  const t = useTranslations("projects")
 
   const workProjects: Project[] = [
     {
-      title: "Rápido Infoshop's Website",
-      description:
-        "A website showcasing Rápido Infoshop's best-selling products while providing insights into the company's mission, services, and expertise in the networking industry.",
+      title: t("workProjects.rapidoWebsite.title"),
+      description: t("workProjects.rapidoWebsite.description"),
       tags: [
         "Next.js",
         "TypeScript",
@@ -142,9 +151,8 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "Rai - WhatsApp Chabot",
-      description:
-        "An AI-powered WhatsApp chatbot utilizing OpenAI's GPT-4o mini and Retrieval-Augmented Generation (RAG) to provide accurate, company-specific answers to users.",
+      title: t("workProjects.raiChatbot.title"),
+      description: t("workProjects.raiChatbot.description"),
       tags: ["Python", "FastAPI", "Twilio", "LangChain", "GPT-4o mini"],
       github: null,
       demo: "https://api.whatsapp.com/send?phone=558235300071&text=Ol%C3%A1",
@@ -152,9 +160,8 @@ export default function Projects() {
       featured: false,
     },
     {
-      title: "Soon...",
-      description:
-        "A business-focused course platform that enhances user engagement through gamification, featuring a competitive ranking system that updates daily to encourage participation.",
+      title: t("workProjects.comingSoon.title"),
+      description: t("workProjects.comingSoon.description"),
       tags: [
         "Next.js",
         "TypeScript",
@@ -174,19 +181,24 @@ export default function Projects() {
 
   const personalProjects: Project[] = [
     {
-      title: "Personal Portfolio",
-      description:
-        "My personal portfolio website built with Next.js and Tailwind CSS.",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "React Hook Form", "zod", "shadcn/ui"],
+      title: t("personalProjects.portfolio.title"),
+      description: t("personalProjects.portfolio.description"),
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Hook Form",
+        "zod",
+        "shadcn/ui",
+      ],
       github: "https://github.com/hsm-gustavo/portfolio",
       demo: "#",
       image: portfolio.src,
       featured: true,
     },
     {
-      title: "Mona AI",
-      description:
-        "A front-end application developed for converting PDFs to Markdown and answering questions based on the document content.",
+      title: t("personalProjects.monaAI.title"),
+      description: t("personalProjects.monaAI.description"),
       tags: [
         "Next.js",
         "TypeScript",
@@ -195,7 +207,7 @@ export default function Projects() {
         "shadcn/ui",
         "React Hook Forms",
         "zustand",
-        "Docker"
+        "Docker",
       ],
       github: "https://github.com/hsm-gustavo/mona-ai-front",
       demo: null,
@@ -203,8 +215,8 @@ export default function Projects() {
       featured: false,
     },
     {
-      title: "dots",
-      description: "A repository related to my current Hyprland configuration.",
+      title: t("personalProjects.dots.title"),
+      description: t("personalProjects.dots.description"),
       tags: ["Linux", "ArchLinux", "Hyprland", "waybar", "swww", "GTK CSS"],
       github: "https://github.com/hsm-gustavo/dots",
       demo: null,
@@ -226,9 +238,9 @@ export default function Projects() {
     <section id="projects" className="py-20 flex items-center justify-center">
       <div className="container px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 font-mono">Projects</h2>
+          <h2 className="text-3xl font-bold mb-4 font-mono">{t("title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A selection of my work and personal projects
+            {t("description")}
           </p>
         </div>
 
@@ -246,14 +258,14 @@ export default function Projects() {
                   className="font-mono flex-1"
                   onClick={() => setActiveTab("personal")}
                 >
-                  Personal Projects
+                  {t("tabs.personal")}
                 </Button>
                 <Button
                   variant={activeTab === "work" ? "default" : "ghost"}
                   className="font-mono flex-1"
                   onClick={() => setActiveTab("work")}
                 >
-                  Work Projects
+                  {t("tabs.work")}
                 </Button>
               </div>
             </div>
@@ -266,6 +278,8 @@ export default function Projects() {
                     project={project}
                     index={index}
                     fadeIn={fadeIn}
+                    codeTranslation={t("buttons.code")}
+                    demoTranslation={t("buttons.demo")}
                   />
                 ))}
               </div>
@@ -279,6 +293,8 @@ export default function Projects() {
                     project={project}
                     index={index}
                     fadeIn={fadeIn}
+                    codeTranslation={t("buttons.code")}
+                    demoTranslation={t("buttons.demo")}
                   />
                 ))}
               </div>

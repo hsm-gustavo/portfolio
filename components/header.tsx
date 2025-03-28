@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import logo from "@/public/logo.svg"
 import {
   Sheet,
@@ -15,10 +15,12 @@ import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { ModeToggle } from "./mode-toggle"
+import { useTranslations } from "next-intl"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const t = useTranslations("navigation")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,11 +31,11 @@ export default function Header() {
   }, [])
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "GitHub", href: "#github" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: t("about"), href: "#about" },
+    { name: t("skills"), href: "#skills" },
+    { name: t("github"), href: "#github" },
+    { name: t("projects"), href: "#projects" },
+    { name: t("contact"), href: "#contact" },
   ]
 
   return (

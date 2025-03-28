@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import Link from "next/link"
+import { Link } from "@/i18n/navigation"
 import { zodResolver } from "@hookform/resolvers/zod"
 import {
   Form,
@@ -42,11 +42,11 @@ export default function Contact() {
 
   const handleSubmit = async (values: ContactFormType) => {
     try {
-      const response = await fetch(`${BASE_URL}/api/email`, {
+      await fetch(`${BASE_URL}/api/email`, {
         method: "POST",
         body: JSON.stringify(values),
       })
-      const data: { message: string } = await response.json()
+      
       toast.success(t("form.successTitle"), {
         description: t("form.success"),
       })

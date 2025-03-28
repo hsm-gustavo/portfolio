@@ -23,7 +23,7 @@ export default function GitHubStats({
     githubData.contributionsCollection.contributionCalendar.totalContributions
 
   const createdAt = new Date(githubData.createdAt)
-  const currentYear = (new Date()).getFullYear()
+  const currentYear = new Date().getFullYear()
 
   const statCards = [
     {
@@ -43,7 +43,7 @@ export default function GitHubStats({
     },
     {
       title: t("stats.timeCoding"),
-      value: `${currentYear - createdAt.getFullYear()} years`,
+      value: `${currentYear - createdAt.getFullYear()} ${t("stats.years")}`,
       icon: <Clock className="size-4 text-primary" />,
     },
   ]
@@ -96,9 +96,7 @@ export default function GitHubStats({
                   {t("tabs.overview")}
                 </Button>
                 <Button
-                  variant={
-                    activeTab === "contributions" ? "default" : "ghost"
-                  }
+                  variant={activeTab === "contributions" ? "default" : "ghost"}
                   className="font-mono flex-1"
                   onClick={() => setActiveTab("contributions")}
                 >
@@ -141,7 +139,9 @@ export default function GitHubStats({
               <Card className="border-none shadow-sm">
                 <CardHeader>
                   <CardTitle className="text-lg font-mono">
-                    {t("contributionCalendarTitle")} {new Date().getFullYear()}
+                    {t("contributionCalendarTitle", {
+                      year: new Date().getFullYear(),
+                    })}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>

@@ -135,5 +135,11 @@
     "label": "Mudar idioma",
     "en": "Inglês",
     "pt-BR": "Português (Brasil)"
+  },
+  "theme": {
+    "toggle": "Mudar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
   }
 }

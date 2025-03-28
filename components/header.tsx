@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { ModeToggle } from "./mode-toggle"
 import { useTranslations } from "next-intl"
+import { LanguageSwitcher } from "./lang-switcher"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -72,10 +73,12 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
+          <LanguageSwitcher />
           <ModeToggle />
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
           <ModeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>

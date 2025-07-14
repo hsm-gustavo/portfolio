@@ -1,10 +1,10 @@
 {
   "layout": {
     "title": "Gustavo Malaquias | Desenvolvedor",
-    "description": "Portfólio pessoal de Gustavo Malaquias, um desenvolvedor fullstack aspirante e estudante de Ciência da Computação na UFAL.",
+    "description": "Portfólio pessoal de Gustavo Malaquias, um desenvolvedor fullstack e estudante de Ciência da Computação na UFAL.",
     "keywords": "desenvolvedor,desenvolvimento web,portfólio,fullstack,next.js,react,typescript",
     "ogImageAlt": "Portfólio de Gustavo Malaquias",
-    "subtitle": "Desenvolvedor Fullstack Aspirante"
+    "subtitle": "Desenvolvedor Fullstack"
   },
   "navigation": {
     "about": "Sobre",
@@ -16,7 +16,7 @@
   "hero": {
     "greeting": "Olá",
     "intro": "Eu sou",
-    "role": "um desenvolvedor fullstack aspirante",
+    "role": "um desenvolvedor fullstack",
     "description": "Estudante de Ciência da Computação na UFAL, apaixonado por desenvolvimento web e personalização Linux",
     "getInTouch": "Entre em contato",
     "learnMore": "Saiba mais"
@@ -34,8 +34,8 @@
         "description": "Gosto de personalizar e otimizar meu ambiente Linux, sempre em busca de novas ferramentas e ajustes."
       },
       "developer": {
-        "title": "Desenvolvedor Fullstack Aspirante",
-        "description": "Atualmente me aprofundando em desenvolvimento backend com Spring com SpringBoot enquanto construo minhas habilidades frontend."
+        "title": "Desenvolvedor Fullstack",
+        "description": "Atualmente me aprofundando em desenvolvimento backend com NestJS enquanto construo minhas habilidades frontend."
       }
     }
   },
@@ -155,6 +155,6 @@
   },
   "manifest": {
     "name": "Gustavo Malaquias | Desenvolvedor",
-    "description": "Portfólio pessoal de Gustavo Malaquias, um desenvolvedor fullstack aspirante"
+    "description": "Portfólio pessoal de Gustavo Malaquias, um desenvolvedor fullstack"
   }
 }

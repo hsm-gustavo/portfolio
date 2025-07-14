@@ -16,6 +16,7 @@ import {
   SiReact,
   SiTailwindcss,
   SiTypescript,
+  SiNestjs,
 } from "@icons-pack/react-simple-icons"
 import { useState } from "react"
 import { Button } from "./ui/button"
@@ -45,6 +46,7 @@ export default function Skills() {
         { name: "React", icon: <SiReact className="w-12 h-12" /> },
         { name: "Next.js", icon: <SiNextdotjs className="w-12 h-12" /> },
         { name: "Tailwind CSS", icon: <SiTailwindcss className="w-12 h-12" /> },
+        { name: "NestJS", icon: <SiNestjs className="w-12 h-12" /> },
       ],
     },
     {

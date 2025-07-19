@@ -8,17 +8,17 @@ export async function POST(req: NextRequest) {
   const transporter = nodemailer.createTransport({
     host: MAIL_HOST,
     port: MAIL_PORT,
-    secure: false,
+    secure: true,
     auth: {
       user: MAIL_USER,
       pass: MAIL_PASS,
     },
-    tls: {
-      rejectUnauthorized: false,
-    },
+    logger: true,
   })
 
   try {
+    await transporter.verify()
+
     await transporter.sendMail({
       from: `"${name}" <${email}>`,
       to: MAIL_USER,

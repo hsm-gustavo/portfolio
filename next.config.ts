@@ -2,7 +2,7 @@ import type { NextConfig } from "next"
 import createNextIntlPlugin from "next-intl/plugin"
 
 const ORIGIN =
-  process.env.NODE_ENV === "production" ? "https://hsm-gustavo.dev" : "*"
+  process.env.NODE_ENV === "production" ? "https://www.hsm-gustavo.dev" : "*"
 
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["https://placeholder.co"],
